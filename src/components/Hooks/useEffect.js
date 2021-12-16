@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import "./style.css"
 
-const UseState = () => {
+const UseEffect = () => {
     const initialData = 0;
-    const [myNum, setMyNum] = React.useState(initialData);
+    const [myNum, setMyNum] = useState(initialData);
+
+    useEffect(() => {
+        document.title = `Chats(${myNum})`
+    },)
 
     return (
         <>
@@ -16,16 +20,9 @@ const UseState = () => {
                     <span></span>
                     INCR
                 </div>
-                <div className='button2' onClick={() => (myNum > 0 ? setMyNum(myNum - 1) : setMyNum(0))}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    DECR
-                </div>
             </div>
         </>
     )
 }
 
-export default UseState
+export default UseEffect
